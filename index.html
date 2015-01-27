@@ -43,6 +43,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h3>&quot;Toggled handler&quot;</h3>
+
                 <p class="text-info">Take a look at the console!</p>
                 <angular-bootstrap-toggle ng-model="toggleValue" toggled="wasToggled()"></angular-bootstrap-toggle>
             </div>
@@ -52,6 +53,27 @@
             <div class="col-md-12">
                 <h3>Custom labels</h3>
                 <angular-bootstrap-toggle ng-model="toggleValue" off-label="No" on-label="Yes"></angular-bootstrap-toggle>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Colors!</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="toggleValue" on-button-class="success" off-button-class="danger"></angular-bootstrap-toggle>
+            </div>
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="toggleValue" on-button-class="warning"></angular-bootstrap-toggle>
+            </div>
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="toggleValue" on-button-class="info" off-button-class="warning"></angular-bootstrap-toggle>
+            </div>
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="toggleValue" on-button-class="danger"></angular-bootstrap-toggle>
             </div>
         </div>
     </div>
