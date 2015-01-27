@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../bower_components/angularjs/angular.min.js"></script>
+    <script type="text/javascript" src="../angular-bootstrap-toggle.js"></script>
+    <script type="text/javascript" src="demo.js"></script>
+
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
+</head>
+<body ng-app="demoApp">
+<div ng-controller="demoController" ng-view>
+    <div class="container">
+        <h1 class="page-header">Angular Bootstrap Toggle</h1>
+
+        <p>A nice and clean implementation of toggles for AngularJS using Bootstrap.</p>
+
+        <h2>Examples</h2>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Large</h3>
+                <angular-bootstrap-toggle ng-model="toggleValue" size="lg"></angular-bootstrap-toggle>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Normal</h3>
+                <angular-bootstrap-toggle ng-model="toggleValue"></angular-bootstrap-toggle>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Small</h3>
+                <angular-bootstrap-toggle ng-model="toggleValue" size="sm"></angular-bootstrap-toggle>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>&quot;Toggled handler&quot;</h3>
+                <p class="text-info">Take a look at the console!</p>
+                <angular-bootstrap-toggle ng-model="toggleValue" toggled="wasToggled()"></angular-bootstrap-toggle>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Custom labels</h3>
+                <angular-bootstrap-toggle ng-model="toggleValue" off-label="No" on-label="Yes"></angular-bootstrap-toggle>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
