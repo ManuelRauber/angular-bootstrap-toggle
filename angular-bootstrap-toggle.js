@@ -40,15 +40,15 @@
                 toggled: '&'
             },
             // TODO: This could be refactored a bit into the linking function and setting it directly.
-            template: '<div class="btn-group" ng-class="{\'disabled\': disabled}">' +
-            '   <button class="btn" ng-class="{\'btn-default\': !model, ' +
+            template: '<div class="btn-group">' +
+            '   <button class="btn" ng-class="{\'disabled\': disabled, \'btn-default\': !model, ' +
             '\'btn-primary\': model && onButtonClass === \'primary\', ' +
             '\'btn-success\': model && onButtonClass === \'success\', ' +
             '\'btn-info\': model && onButtonClass === \'info\', ' +
             '\'btn-warning\': model && onButtonClass === \'warning\', ' +
             '\'btn-danger\': model && onButtonClass === \'danger\', ' +
             '\'btn-lg\': size === \'lg\', \'btn-sm\': size === \'sm\'}">{{onLabel}}</button>' +
-            '   <button class="btn" ng-class="{\'btn-default\': model,' +
+            '   <button class="btn" ng-class="{\'disabled\': disabled, \'btn-default\': model,' +
             '\'btn-primary\': !model && offButtonClass === \'primary\', ' +
             '\'btn-success\': !model && offButtonClass === \'success\', ' +
             '\'btn-info\': !model && offButtonClass === \'info\', ' +
