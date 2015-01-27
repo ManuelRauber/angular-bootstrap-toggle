@@ -9,6 +9,8 @@
         this.onLabel = 'On';
         this.offLabel = 'Off';
         this.size = '';
+        this.offButtonClass = 'primary';
+        this.onButtonClass = 'primary';
 
         var self = this;
 
@@ -16,7 +18,9 @@
             return {
                 onLabel: self.onLabel,
                 offLabel: self.offLabel,
-                size: self.size
+                size: self.size,
+                offButtonClass: self.offButtonClass,
+                onButtonClass: self.onButtonClass
             }
         }
     });
@@ -31,11 +35,26 @@
                 offLabel: '@',
                 animate: '@',
                 size: '@',
+                offButtonClass: '@',
+                onButtonClass: '@',
                 toggled: '&'
             },
+            // TODO: This could be refactored a bit into the linking function and setting it directly.
             template: '<div class="btn-group" ng-class="{\'disabled\': disabled}">' +
-            '   <button class="btn" ng-class="{\'btn-default\': !model, \'btn-primary\': model, \'btn-lg\': size === \'lg\', \'btn-sm\': size === \'sm\'}">{{onLabel}}</button>' +
-            '   <button class="btn" ng-class="{\'btn-default\': model, \'btn-primary\': !model, \'btn-lg\': size === \'lg\', \'btn-sm\': size === \'sm\'}">{{offLabel}}</button>' +
+            '   <button class="btn" ng-class="{\'btn-default\': !model, ' +
+            '\'btn-primary\': model && onButtonClass === \'primary\', ' +
+            '\'btn-success\': model && onButtonClass === \'success\', ' +
+            '\'btn-info\': model && onButtonClass === \'info\', ' +
+            '\'btn-warning\': model && onButtonClass === \'warning\', ' +
+            '\'btn-danger\': model && onButtonClass === \'danger\', ' +
+            '\'btn-lg\': size === \'lg\', \'btn-sm\': size === \'sm\'}">{{onLabel}}</button>' +
+            '   <button class="btn" ng-class="{\'btn-default\': model,' +
+            '\'btn-primary\': !model && offButtonClass === \'primary\', ' +
+            '\'btn-success\': !model && offButtonClass === \'success\', ' +
+            '\'btn-info\': !model && offButtonClass === \'info\', ' +
+            '\'btn-warning\': !model && offButtonClass === \'warning\', ' +
+            '\'btn-danger\': !model && offButtonClass === \'danger\', ' +
+            ' \'btn-lg\': size === \'lg\', \'btn-sm\': size === \'sm\'}">{{offLabel}}</button>' +
             '</div>',
             compile: function (element, attrs) {
                 if (!attrs.onLabel) {
@@ -48,6 +67,14 @@
 
                 if (!attrs.size) {
                     attrs.size = angularBootstrapToggleConfig.size;
+                }
+
+                if (!attrs.onButtonClass) {
+                    attrs.onButtonClass = angularBootstrapToggleConfig.onButtonClass;
+                }
+
+                if (!attrs.offButtonClass) {
+                    attrs.offButtonClass = angularBootstrapToggleConfig.offButtonClass;
                 }
 
                 return this.link;
