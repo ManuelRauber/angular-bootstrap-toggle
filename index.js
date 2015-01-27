@@ -9,8 +9,6 @@
      * @constructor
      */
     function DemoController($scope) {
-        $scope.toggleValue = false;
-
         $scope.wasToggled = function () {
             console.log('Toggled handler was called');
         }
