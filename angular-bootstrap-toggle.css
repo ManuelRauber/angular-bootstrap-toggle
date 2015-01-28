@@ -1,0 +1,39 @@
+div.angular-bootstrap-toggle {
+    display: inline-block;
+}
+
+div.angular-bootstrap-toggle.toggle-animation {
+    overflow: hidden;
+}
+
+div.angular-bootstrap-toggle.toggle-animation div {
+    width: 150%;
+}
+
+div.angular-bootstrap-toggle.toggle-animation div.animation {
+    -webkit-transition: left .5s;
+    -moz-transition: left .5s;
+    -ms-transition: left .5s;
+    -o-transition: left .5s;
+    transition: left .5s;
+}
+
+div.angular-bootstrap-toggle.toggle-animation div.toggle-off {
+    left: -48%;
+}
+
+div.angular-bootstrap-toggle.toggle-animation div.toggle-on {
+    left: 0.5%;
+}
+
+div.angular-bootstrap-toggle button {
+    width: 50%;
+}
+
+div.angular-bootstrap-toggle.toggle-animation button, div.angular-bootstrap-toggle.custom-knob button {
+    width: 33%;
+}
+
+div.angular-bootstrap-toggle.toggle-animation span, div.angular-bootstrap-toggle.custom-knob span {
+    width: 34%;
+}

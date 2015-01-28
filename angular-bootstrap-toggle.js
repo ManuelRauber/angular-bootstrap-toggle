@@ -11,6 +11,8 @@
         this.size = '';
         this.offButtonClass = 'primary';
         this.onButtonClass = 'primary';
+        this.animation = false;
+        this.knobText = '';
 
         var self = this;
 
@@ -20,7 +22,9 @@
                 offLabel: self.offLabel,
                 size: self.size,
                 offButtonClass: self.offButtonClass,
-                onButtonClass: self.onButtonClass
+                onButtonClass: self.onButtonClass,
+                animation: self.animation,
+                knobText: self.knobText
             }
         }
     });
@@ -33,29 +37,32 @@
                 disabled: '=',
                 onLabel: '@',
                 offLabel: '@',
-                animate: '@',
+                animation: '@',
                 size: '@',
                 offButtonClass: '@',
                 onButtonClass: '@',
-                toggled: '&'
+                toggled: '&',
+                knobText: '@'
             },
             // TODO: This could be refactored a bit into the linking function and setting it directly.
-            template: '<div class="btn-group">' +
-            '   <button class="btn" ng-class="{\'disabled\': disabled, \'btn-default\': !model, ' +
+            template: '<div class="angular-bootstrap-toggle" ng-class="{\'toggle-animation\': animation, \'custom-knob\': knobText}">' +
+            '   <div class="btn-group" ng-class="{\'animation\': animation,\'toggle-on\': model, \'toggle-off\': !model}">' +
+            '       <button class="btn" ng-class="{\'disabled\': disabled, \'btn-default\': !model, ' +
             '\'btn-primary\': model && onButtonClass === \'primary\', ' +
             '\'btn-success\': model && onButtonClass === \'success\', ' +
             '\'btn-info\': model && onButtonClass === \'info\', ' +
             '\'btn-warning\': model && onButtonClass === \'warning\', ' +
             '\'btn-danger\': model && onButtonClass === \'danger\', ' +
             '\'btn-lg\': size === \'lg\', \'btn-sm\': size === \'sm\'}">{{onLabel}}</button>' +
-            '   <button class="btn" ng-class="{\'disabled\': disabled, \'btn-default\': model,' +
+            '       <span ng-if="animation || knobText" class="btn btn-default" ng-class="{\'disabled\': disabled, \'btn-lg\': size === \'lg\', \'btn-sm\': size === \'sm\'}">{{knobText || \'&nbsp;\'}}</span>' +
+            '       <button class="btn" ng-class="{\'disabled\': disabled, \'btn-default\': model,' +
             '\'btn-primary\': !model && offButtonClass === \'primary\', ' +
             '\'btn-success\': !model && offButtonClass === \'success\', ' +
             '\'btn-info\': !model && offButtonClass === \'info\', ' +
             '\'btn-warning\': !model && offButtonClass === \'warning\', ' +
             '\'btn-danger\': !model && offButtonClass === \'danger\', ' +
             ' \'btn-lg\': size === \'lg\', \'btn-sm\': size === \'sm\'}">{{offLabel}}</button>' +
-            '</div>',
+            '</div></div>',
             compile: function (element, attrs) {
                 if (!attrs.onLabel) {
                     attrs.onLabel = angularBootstrapToggleConfig.onLabel;
@@ -75,6 +82,10 @@
 
                 if (!attrs.offButtonClass) {
                     attrs.offButtonClass = angularBootstrapToggleConfig.offButtonClass;
+                }
+
+                if (!attrs.animation) {
+                    attrs.animation = angularBootstrapToggleConfig.animation;
                 }
 
                 return this.link;
