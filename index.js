@@ -10,7 +10,7 @@
      */
     function DemoController($scope) {
         $scope.wasToggled = function () {
-            console.log('Toggled handler was called');
+            console.log('Toggled handler was called, new value ' + $scope.toggleHandler);
         };
 
         $scope.toggleTrue = true;
