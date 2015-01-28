@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="angular-bootstrap-toggle.css"/>
 </head>
 <body ng-app="demoApp">
 <div ng-controller="demoController" ng-view>
@@ -21,22 +22,19 @@
 
         <div class="row">
             <div class="col-md-12">
-                <h3>Large</h3>
+                <h3>Default</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
                 <angular-bootstrap-toggle ng-model="toggle1" size="lg"></angular-bootstrap-toggle>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <h3>Normal</h3>
-                <angular-bootstrap-toggle ng-model="toggle2"></angular-bootstrap-toggle>
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="toggle100"></angular-bootstrap-toggle>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <h3>Small</h3>
-                <angular-bootstrap-toggle ng-model="toggle3" size="sm"></angular-bootstrap-toggle>
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="toggle101" size="sm"></angular-bootstrap-toggle>
             </div>
         </div>
 
@@ -81,6 +79,72 @@
             </div>
             <div class="col-md-2">
                 <angular-bootstrap-toggle ng-model="toggle9" on-button-class="danger"></angular-bootstrap-toggle>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Animation!</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="toggle11" animation="true" size="lg" on-button-class="success" off-button-class="danger"></angular-bootstrap-toggle>
+            </div>
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="toggle14" animation="true" on-button-class="success" off-button-class="danger"></angular-bootstrap-toggle>
+            </div>
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="toggle15" animation="true" size="sm" on-button-class="success" off-button-class="danger"></angular-bootstrap-toggle>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Custom knob text (with animation)</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="toggle12" animation="true" size="lg" knob-text="PC" on-button-class="success" off-button-class="danger"></angular-bootstrap-toggle>
+            </div>
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="toggle16" animation="true" knob-text="PC" on-button-class="success" off-button-class="danger"></angular-bootstrap-toggle>
+            </div>
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="toggle17" animation="true" size="sm" knob-text="PC" on-button-class="success" off-button-class="danger"></angular-bootstrap-toggle>
+            </div>
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="false" animation="true" disabled="true" size="sm" knob-text="PC" on-button-class="success" off-button-class="danger"></angular-bootstrap-toggle>
+            </div>
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="true" animation="true" disabled="true" size="sm" knob-text="PC" on-button-class="success" off-button-class="danger"></angular-bootstrap-toggle>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Custom knob text (without animation)</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="toggle118" size="lg" knob-text="PC" on-button-class="success" off-button-class="danger"></angular-bootstrap-toggle>
+            </div>
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="toggle19" knob-text="PC" on-button-class="success" off-button-class="danger"></angular-bootstrap-toggle>
+            </div>
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="toggle20" size="sm" knob-text="PC" on-button-class="success" off-button-class="danger"></angular-bootstrap-toggle>
+            </div>
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="false" disabled="true" size="sm" knob-text="PC" on-button-class="success" off-button-class="danger"></angular-bootstrap-toggle>
+            </div>
+            <div class="col-md-2">
+                <angular-bootstrap-toggle ng-model="true" disabled="true" size="sm" knob-text="PC" on-button-class="success" off-button-class="danger"></angular-bootstrap-toggle>
             </div>
         </div>
     </div>
